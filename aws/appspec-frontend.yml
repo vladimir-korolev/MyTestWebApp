@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/app
+hooks:
+  ApplicationStop:
+    - location: aws/scripts/frontend-stop.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: aws/scripts/frontend-install.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: aws/scripts/frontend-start.sh
+      timeout: 300
+      runas: root
+  ValidateService:
+    - location: aws/scripts/frontend-validate.sh
+      timeout: 300
+      runas: root

@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/app
+hooks:
+  ApplicationStop:
+    - location: aws/scripts/backend-stop.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: aws/scripts/backend-install.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: aws/scripts/backend-start.sh
+      timeout: 300
+      runas: root
+  ValidateService:
+    - location: aws/scripts/backend-validate.sh
+      timeout: 300
+      runas: root

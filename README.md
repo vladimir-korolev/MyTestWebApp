@@ -17,11 +17,24 @@ A three-tier web application with Node.js frontend, Go backend, and PostgreSQL d
 
 ## Running the Application
 
+### Local Development (Docker Compose)
+
 ```bash
 docker-compose up --build
 ```
 
 Access the web interface at: http://localhost:3000
+
+### AWS Deployment
+
+See [AWS Deployment Guide](aws/DEPLOYMENT.md) for complete instructions.
+
+Quick start:
+```bash
+cd aws/terraform
+terraform init
+terraform apply
+```
 
 ## Testing
 

@@ -1,0 +1,25 @@
+aws_region  = "us-east-1"
+project_name = "multitier-app"
+
+# Existing Autoscaling Group Names
+backend_dev_asg_name  = "your-backend-dev-asg"
+backend_prod_asg_name = "your-backend-prod-asg"
+frontend_dev_asg_name  = "your-frontend-dev-asg"
+frontend_prod_asg_name = "your-frontend-prod-asg"
+
+# Existing Target Group Names (for load balancer integration)
+backend_dev_target_group_name  = "your-backend-dev-tg"
+backend_prod_target_group_name = "your-backend-prod-tg"
+frontend_dev_target_group_name  = "your-frontend-dev-tg"
+frontend_prod_target_group_name = "your-frontend-prod-tg"
+
+# RDS Configuration
+rds_instance_arn = "arn:aws:rds:us-east-1:123456789012:db:your-rds-instance"
+db_username      = "postgres"
+db_password      = "YOUR_DB_PASSWORD"
+
+# Secrets Manager Configuration
+db_secret_name = "multitier-app/rds/credentials"
+db_secret_arn  = "arn:aws:secretsmanager:us-east-1:123456789012:secret:multitier-app/rds/credentials-AbCdEf"
+
+
